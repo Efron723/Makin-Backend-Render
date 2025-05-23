@@ -13,7 +13,7 @@ import axios from 'axios'
 import querystring from 'querystring'
 const spotify_client_id = process.env.SPOTIFY_CLIENT_ID
 const spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET
-const redirect_uri = 'https://makin-backend-render.onrender.com/callback'
+const redirect_uri = 'https://makin-backend.onrender.com/callback'
 
 // 使用內建的 MemoryStore
 const MemoryStore = session.MemoryStore
@@ -39,7 +39,7 @@ const app = express()
 app.use(
   cors({
     origin: [
-      'https://makin-frontend-render.onrender.com',
+      'https://makin.onrender.com',
       'https://accounts.spotify.com',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -116,7 +116,7 @@ app.get('/callback', async (req, res) => {
     const { access_token, refresh_token } = response.data
     // 重定向到前端的一個特定頁面，並附帶 token
     res.redirect(
-      `https://makin-frontend-render.onrender.com/auth/callback#access_token=${access_token}&refresh_token=${refresh_token}`
+      `https://makin.onrender.com/auth/callback#access_token=${access_token}&refresh_token=${refresh_token}`
     )
   } catch (error) {
     res.send(error)
