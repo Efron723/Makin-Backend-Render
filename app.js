@@ -39,7 +39,7 @@ const app = express()
 app.use(
   cors({
     origin: [
-      'https://makin.onrender.com',
+      'https://makin-sound.onrender.com',
       'https://accounts.spotify.com',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -116,7 +116,7 @@ app.get('/callback', async (req, res) => {
     const { access_token, refresh_token } = response.data
     // 重定向到前端的一個特定頁面，並附帶 token
     res.redirect(
-      `https://makin.onrender.com/auth/callback#access_token=${access_token}&refresh_token=${refresh_token}`
+      `https://makin-sound.onrender.com/auth/callback#access_token=${access_token}&refresh_token=${refresh_token}`
     )
   } catch (error) {
     res.send(error)

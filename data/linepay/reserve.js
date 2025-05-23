@@ -21,7 +21,7 @@ let options = {
     },
   ],
   redirectUrls: {
-    confirmUrl: 'https://makin.onrender.com/pay-confirm',
-    cancelUrl: 'https://makin.onrender.com/pay-cancel',
+    confirmUrl: 'https://makin-sound.onrender.com/pay-confirm',
+    cancelUrl: 'https://makin-sound.onrender.com/pay-cancel',
   },
 }
