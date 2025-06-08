@@ -25,18 +25,24 @@ html
       }
 
       .hover-animate {
-        display: inline-block;
-        transition: transform 0.3s ease;
         background: linear-gradient(
-          135deg,
-          red, orange, yellow, green, blue, indigo, violet
+          90deg,
+          red,
+          orange,
+          yellow,
+          green,
+          cyan,
+          blue,
+          violet,
+          red
         );
-        background-size: 400% 400%;
+        background-size: 800% 100%;
+        background-repeat: repeat;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         color: transparent;
-        animation: rainbowShift 5s linear infinite;
+        animation: rainbowShift 30s linear infinite;
         animation-play-state: paused;
         font-size: 60px;
         cursor: pointer;
@@ -49,10 +55,10 @@ html
 
       @keyframes rainbowShift {
         0% {
-          background-position: 0% 100%;
+          background-position: 0% 0%;
         }
         100% {
-          background-position: 100% 0%;
+          background-position: 800% 0%;
         }
       }
   body

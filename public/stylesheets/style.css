@@ -8,7 +8,7 @@ body {
 .centered-black-bg {
   background-color: black;
   color: white;
-  height: 100vh; /* 改成固定高度 */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,33 +18,40 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.hover-animate {
-  display: inline-block;
-  transition: transform 0.3s ease;
+.rainbow {
   background: linear-gradient(
-    135deg,
-    red, orange, yellow, green, blue, indigo, violet
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
   );
-  background-size: 400% 400%;
+  background-size: 800% 100%;
+  background-repeat: repeat;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: rainbowShift 5s linear infinite;
-  animation-play-state: paused;
-  cursor: pointer;
-}
-
-.hover-animate:hover {
-  transform: scale(1.2);
-  animation-play-state: running;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowShift 30s linear infinite;
 }
 
 @keyframes rainbowShift {
   0% {
-    background-position: 0% 100%;
+    background-position: 0% 0%;
   }
   100% {
-    background-position: 100% 0%;
+    background-position: 800% 0%;
   }
+}
+
+.hover-animate {
+  transition: transform 0.3s ease;
+}
+
+.hover-animate:hover {
+  transform: scale(1.2);
 }
